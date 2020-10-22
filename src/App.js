@@ -53,7 +53,7 @@ class App extends React.Component {
             preco={59.90}
           />
           <Produtos
-            imagem={astronautaPlanetas}
+            imagem={astronauta}
             nome={"Camiseta Astronauta"}
             preco={80.00}
           />
