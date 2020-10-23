@@ -4,6 +4,9 @@ import { Cabecalho } from './components/cabecalho'
 import { Produtos } from './components/produtos'
 import { Rodape } from "./components/rodape"
 import { Filtro } from "./components/filtro"
+
+import { Sacola } from "./components/Sacola/Sacola";
+
 import logo from "./img/logo.png"
 import lupa from "./img/lupa.png"
 import sacola from "./img/sacola.png"
@@ -20,6 +23,10 @@ import astronauta from "./img/camieta-astronauta.png"
 
 class App extends React.Component {
   state ={
+    minFilter:20,
+    maxFilter:100,
+    nameFilter:'TESTE',
+
     produtos: [
     {
       id: 1,
@@ -70,12 +77,13 @@ class App extends React.Component {
       preco: 49,
     },
     ]
-  } 
+    } 
 
   render() {
 
       return(
       <div>
+
          <header>
            <Cabecalho
             imagem={logo}
@@ -87,14 +95,25 @@ class App extends React.Component {
         <hr />
 
         <section>
-          <Filtro />
+         <Sacola produtos={this.state.produtos} />
+
+          <Filtro 
+         
+          minFilter={this.state.minFilter}
+          maxFilter={this.state.maxFilter}
+          nameFilter={this.state.nameFilter}/>
+    
         </section>
 
         <hr />
         <section className="produtos">
           {this.state.produtos.map((produto)=> {
-            return <Produtos imagem={produto.imagem} nome={produto.nome} preco={produto.preco}/>
+            return <Produtos imagem={produto.imagem} nome={produto.nome} preco={produto.preco}
+            minFilter={this.state.minFilter}
+            maxFilter={this.state.maxFilter}
+            nasmeFilter={this.state.nameFilter}/>
           })
+         
         }
         </section>
         

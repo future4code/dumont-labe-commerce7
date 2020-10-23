@@ -8,10 +8,10 @@ export class Filtro extends React.Component {
         <nav className="filtro-valor">
             <ul>
             <li>
-            <input type="number" placeholder="Valor Mínimo"/>
+            <input type="number" value={this.props.minFilter}onchange={this.props.onChangeMinFilter} placeholder="Valor Mínimo"/>
             </li>
             <li>
-            <input type="number" placeholder="Valor Máximo"/>
+            <input type="number" value={this.props.maxFilter}onchange={this.props.onChangeMaxFilter} placeholder="Valor Máximo"/>
             </li>
             </ul>
         </nav> 
