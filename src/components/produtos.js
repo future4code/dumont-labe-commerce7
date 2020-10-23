@@ -1,13 +1,14 @@
 import React from 'react';
 
-export function Produtos(props) {
+export class Produtos extends React.Component {
+  render() {
     return (
-      <div>
-        <a href="">
-          <img src={props.imagem} alt="produto" width="300px" />
-          <h3>{props.nome}</h3>
-          <h4>R$ {props.preco} </h4>
-        </a>
+      <div className="produtoIndividual">
+        <img src = {this.props.imagem} width="350px" />
+        <p>{this.props.nome}</p>
+        <p>R$ {this.props.preco},00</p>
+        <button>COMPRAR</button>
       </div>
-    );
+    )
   }
+}
