@@ -13,8 +13,8 @@ export class Cabecalho extends React.Component {
                         <li>
 
                             <div className="input-buscar">
-                                <input name="" />
-                                <button type="text"><img src={this.props.lupa} alt="imagem-lupa" width="10px"/></button>
+                            <input type="text" value={this.props.nameFilter}onchange={this.props.onChangeNameFilter} placeholder="Buscar"/>
+                            <button type="text"><img src={this.props.lupa} alt="imagem-lupa" width="10px"/></button>
                             </div>
 
                         </li>
