@@ -16,12 +16,68 @@ import planetas from "./img/blusa-planetas.jpg"
 import galaxia from "./img/Camiseta-galaxia.jpg"
 import astronauta from "./img/camieta-astronauta.png"
 
+
+
 class App extends React.Component {
+  state ={
+    produtos: [
+    {
+      id: 1,
+      imagem: blusaPlanetaAzul,
+      nome: "Blusa Planeta Azul",
+      preco: 199,
+    },
+    {
+      id: 2,
+      imagem: estacaoEspacial,
+      nome: "Camiseta Estação Espacial",
+      preco :100,
+    },
+    {
+      id: 3,
+      imagem: astronautaPlanetas,
+      nome: "Camiseta Astronauta Ballon",
+      preco: 59,
+    },
+    {
+      id: 4,
+      imagem: astronauta,
+      nome: "Camiseta Astronauta",
+      preco: 80,
+    },
+    {
+      id: 5,
+      imagem: discoVoador,
+      nome: "Blusa Disco Voador",
+      preco: 250,
+    },
+    {
+      id: 6,
+      imagem: saturno,
+      nome: "Camiseta Planeta Saturno",
+      preco: 79,
+    },
+    {
+      id: 7,
+      imagem: planetas,
+      nome: "Blusa Planetas",
+      preco: 190,
+    },
+    {
+      id: 8,
+      imagem: galaxia,
+      nome: "Camiseta Galáxia",
+      preco: 49,
+    },
+    ]
+  } 
+
   render() {
-    return (
+
+      return(
       <div>
-        <header>
-          <Cabecalho
+         <header>
+           <Cabecalho
             imagem={logo}
             lupa={lupa}
             sacola={sacola}
@@ -35,49 +91,14 @@ class App extends React.Component {
         </section>
 
         <hr />
-
         <section className="produtos">
-          <Produtos
-            imagem={blusaPlanetaAzul}
-            nome={"Blusa Planeta Azul"}
-            preco={199.00}
-          />
-          <Produtos
-            imagem={estacaoEspacial}
-            nome={"Camiseta Estação Espacial"}
-            preco={100.00}
-          />
-          <Produtos
-            imagem={astronautaPlanetas}
-            nome={"Camiseta Astronauta Ballon"}
-            preco={59.90}
-          />
-          <Produtos
-            imagem={astronauta}
-            nome={"Camiseta Astronauta"}
-            preco={80.00}
-          />
-          <Produtos
-            imagem={discoVoador}
-            nome={"Blusa Disco Voador"}
-            preco={250.00}
-          />
-          <Produtos
-            imagem={saturno}
-            nome={"Camiseta Planeta Saturno"}
-            preco={79.90}
-          />
-          <Produtos
-            imagem={planetas}
-            nome={"Blusa Planetas"}
-            preco={190.00}
-          />
-          <Produtos
-            imagem={galaxia}
-            nome={"Camiseta Galáxia"}
-            preco={49.90}
-          />
+          {this.state.produtos.map((produto)=> {
+            return <Produtos imagem={produto.imagem} nome={produto.nome} preco={produto.preco}/>
+          })
+        }
         </section>
+        
+
 
         <hr />
 

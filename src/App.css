@@ -46,9 +46,14 @@ nav ul li {
   padding: 100px 20px;
 }
 
+.produtoIndividual{
+  border: 1px solid black;
+  display: block;
+  text-align: center;
+}
+
  footer{
    text-align: center;
-   position: fixed;
    bottom: 0;
    width: 100%;
  }
